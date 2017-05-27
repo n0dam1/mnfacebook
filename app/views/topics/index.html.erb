@@ -1,0 +1,7 @@
+<h1>トピック一覧</h1>
+
+<% @topics.each do |topic| %>
+  <p>本文：<%= topic.content %></p>
+<% end %>
+
+<%= link_to "トピックを作成する", new_topic_path %>
