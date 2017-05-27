@@ -1,9 +1,13 @@
-<h1>トピック一覧</h1>
-
-<% @topics.each do |topic| %>
-  <p>本文：<%= topic.content %></p>
-  <%= link_to "トピックを編集する", edit_topic_path(topic.id) %>
-  <%= link_to "トピックを削除する", topic_path(topic.id), method: :delete %>  
-<% end %>
-
-<%= link_to "トピックを作成する", new_topic_path %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <h1>トピック一覧</h1>
+    <%= link_to "トピックを作成する", new_topic_path, class: 'btn btn-default' %>
+    <% @topics.each do |topic| %>
+    <div class="row">
+      <p><%= topic.content %></p>
+      <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
+      <%= link_to "削除", topic_path(topic.id), method: :delete, class: 'btn btn-default btn-sm btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>
