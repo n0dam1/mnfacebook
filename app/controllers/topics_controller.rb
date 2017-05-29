@@ -8,6 +8,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.create(topics_params)
+    @topic.id = current_user.id
     redirect_to topics_path
   end
 
