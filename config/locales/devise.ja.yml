@@ -24,7 +24,7 @@ ja:
       unlock_instructions:
         subject: 'アカウントの凍結解除について'
       email_changed:
-        subject: "メールアドレスの変更について"
+        subject: 'メールアドレスの変更について'
       password_change:
         subject: 'パスワードの変更について'
     omniauth_callbacks:
