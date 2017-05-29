@@ -1,5 +1,6 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
     <h1>トピック一覧</h1>
     <%= link_to "トピックを作成する", new_topic_path, class: 'btn btn-default' %>
     <% @topics.each do |topic| %>
