@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_topic, only: [:edit, :update, :destroy]
+  before_action :set_topic, only: [:edit, :update, :destroy, :show]
 
   def index
     @topics = Topic.all
@@ -30,13 +30,19 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
-  private
-    def topics_params
-      params.require(:topic).permit(:content)
-    end
+  def show
+    @comment = @topic.comments.build
+    @comments = @topic.comments
+  end
 
-    def set_topic
-      @topic = Topic.find(params[:id])
-    end
+  private
+
+  def topics_params
+    params.require(:topic).permit(:content)
+  end
+
+  def set_topic
+    @topic = Topic.find(params[:id])
+  end
 
 end
