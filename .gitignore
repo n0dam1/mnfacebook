@@ -14,3 +14,7 @@
 
 #dotenv-rails
 .env
+
+# Ignore upload
+/public/uploads/*
+!/public/uploads/.gitkeep
