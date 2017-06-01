@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :users, only: [:index]
+
   root 'topics#index'
 
   if Rails.env.development?
