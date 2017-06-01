@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <h2>コメントを編集する</h2>
+    <%= form_for(@comment, url: topic_comment_path) do |f| %>
+      <%= f.label '内容' %>
+      <%= f.text_field :content, class: 'form-control' %>
+      <br>
+      <%= f.submit '投稿', class: 'btn btn-primary btn-block'%>
+    <% end %>
+  </div>
+</div>
