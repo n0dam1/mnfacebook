@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <h3><strong><%= @user.name %></strong></h3>
+    <p><%= profile_img(@user) %></p>
+    <p><%= @user.email %></p>
+  </div>
+    <%= render 'follower' %>
+    <%= render 'followed' %>
+</div>

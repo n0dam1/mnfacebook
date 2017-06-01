@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   has_many :topics, dependent: :destroy
   has_many :comments, dependent: :destroy
   # フォロー、フォロワーの関係性定義
-  has_many :active_relationships, class_name: 'Relationship', dependent: :destroy
-  has_many :passive_relationships, class_name: 'Relationship',  dependent: :destroy
+  has_many :active_relationships, foreign_key: "follower_id", class_name: 'Relationship', dependent: :destroy
+  has_many :passive_relationships, foreign_key: "followed_id", class_name: 'Relationship',  dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
@@ -19,12 +19,12 @@ class User < ActiveRecord::Base
 
     unless user
       user = User.new(
-        name:      auth.extra.raw_info.name,
-        provider:  auth.provider,
-        uid:       auth.uid,
-        email:     auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
-        image_url: auth.info.image,
-        password:  Devise.friendly_token[0..20]
+      name:      auth.extra.raw_info.name,
+      provider:  auth.provider,
+      uid:       auth.uid,
+      email:     auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
+      image_url: auth.info.image,
+      password:  Devise.friendly_token[0..20]
       )
       user.skip_confirmation!
       user.save(validate: false)
@@ -37,12 +37,12 @@ class User < ActiveRecord::Base
 
     unless user
       user = User.new(
-        name:      auth.info.nickname,
-        provider:  auth.provider,
-        uid:       auth.uid,
-        email:     auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
-        image_url: auth.info.image,
-        password:  Devise.friendly_token[0..20]
+      name:      auth.info.nickname,
+      provider:  auth.provider,
+      uid:       auth.uid,
+      email:     auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
+      image_url: auth.info.image,
+      password:  Devise.friendly_token[0..20]
       )
       user.skip_confirmation!
       user.save(validate: false)
@@ -61,5 +61,17 @@ class User < ActiveRecord::Base
       params.delete :current_password
       update_without_password(params, *options)
     end
+  end
+
+  def follow!(other_user)
+    active_relationships.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following?(other_user)
+    active_relationships.find_by(followed_id: other_user.id)
   end
 end
