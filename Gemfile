@@ -29,6 +29,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'twitter-bootstrap-rails'
+
+gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'rmagick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -44,23 +55,10 @@ group :development, :test do
 
   gem 'pry-rails'
   gem 'better_errors'
+
+  gem 'dotenv-rails'
 end
 
 group :development do
   gem 'letter_opener_web'
-  gem 'dotenv-rails'
 end
-
-gem 'twitter-bootstrap-rails'
-gem 'devise'
-gem 'rails_admin'
-
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-
-#image uploader
-gem 'carrierwave'
-gem 'rmagick'
-
-gem 'pusher'
