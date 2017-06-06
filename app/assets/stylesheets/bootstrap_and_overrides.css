@@ -4,4 +4,78 @@
   Use Font Awesome icons (default)
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
-  */
+*/
+
+.container {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.row {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+input[type="submit"].btn-block {
+  margin: 15px 0;
+}
+
+.navbar {
+  background-color: #3B5998;
+}
+
+/* navbar テキストカラー */
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+/* navbar hover,focus時のテキストカラー */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #94A4C6;
+  background-color: transparent;
+}
+
+/* navbar ハンバーガー四角枠 */
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+
+/* navbar ハンバーガー三本線 */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+/* navbar ハンバーガーボタン,タップとホバーした時の背景色 */
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: #ffffff;
+}
+
+/* navbar ハンバーガーボタン,タップとホバーした時の四角枠 */
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  border-color: #3B5998;
+}
+
+/* navbar ハンバーガーボタン,タップとホバーした時の三本線 */
+.navbar-default .navbar-toggle:focus > .icon-bar,
+.navbar-default .navbar-toggle:hover > .icon-bar {
+  background-color: #3B5998;
+}
+
+/* navbar Brandのカラー */
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #94A4C6;
+  background-color: transparent;
+}

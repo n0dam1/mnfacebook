@@ -12,4 +12,35 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
+body {
+  text-align: center;
+  background-color: #e9ebee;
+}
+
+.flash {
+  color: white;
+  padding-top: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+}
+
+.child li {
+  padding-top: 13px;
+  border-bottom: 1px dotted #ccc;
+  list-style-type: none;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
