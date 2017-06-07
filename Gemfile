@@ -41,6 +41,7 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
