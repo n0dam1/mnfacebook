@@ -14,7 +14,7 @@
     <% if topic.user_id == current_user.id %>
     <br>
     <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
-    <%= link_to "削除", topic_path(topic.id), method: :delete, class: 'btn btn-default btn-sm btn-danger', data: { confirm: '本当に削除していいですか？' } %>
+    <%= link_to "削除", topic_path(topic.id), method: :delete, class: 'btn btn-default btn-sm btn-danger', data: { confirm: '本当に削除してよろしいですか？' } %>
     <% end %>
   </div>
   <% end %>
