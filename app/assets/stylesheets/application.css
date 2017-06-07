@@ -25,17 +25,31 @@ body {
 
 img {
   max-width: 100%;
+  border: 1px solid #ccc;
 }
 
 ul {
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 .child li {
   padding-top: 13px;
   border-bottom: 1px dotted #ccc;
-  list-style-type: none;
 }
+
+.wrapper {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  word-wrap: break-word;
+  text-align: center;
+}
+
 
 .right {
   text-align: right;
@@ -43,4 +57,27 @@ ul {
 
 .left {
   text-align: left;
+}
+
+.name {
+  margin-left: 5px;
+}
+
+.topic-text {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.new-post {
+  margin-top: 10px;
+}
+
+.edit-post {
+  margin-bottom: 5px;
+}
+
+.topic-content {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }

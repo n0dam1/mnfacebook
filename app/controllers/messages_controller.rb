@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = @conversation.messages
+    @messages = @conversation.messages.order(created_at: :DESC)
 
     if @messages.last
       if @messages.last.user_id != current_user.id

@@ -27,6 +27,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
             <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+            <li><%= link_to 'つながり', user_path(current_user) %></li>
             <li><%= link_to 'ユーザー一覧', users_path %></li>
             <li><%= link_to 'メッセージ', conversations_path %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -39,6 +40,7 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
+  <% flash_messages %>
   <%= yield %>
 </body>
 </html>

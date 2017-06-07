@@ -1,17 +1,21 @@
-<div class="container">
-<% @messages.each do |message| %>
-  <% if message.body %>
-    <% user = User.find(message.user_id) %>
-    <p><%= user.name %></p>
-    <p><%= message.message_time %></p>
-    <p><%= message.body %></p>
+<div class="container-fluid">
+  <div class="row">
+  <%= form_for [@conversation, @message] do |f| %>
+    <%= f.text_area :body, class: "form-control", placeholder: "内容" %>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+    <%= f.submit "メッセージを送る", class: 'btn btn-primary btn-block' %>
   <% end %>
+  </div>
 
+<% @messages.each do |message| %>
+  <% if message.body.present? %>
+  <div class="row">
+    <% user = User.find(message.user_id) %>
+    <p class="left"><%= profile_img(user) %><strong class="name"><%= user.name %></strong></p>
+    <%= message.body %>
+    <div class="right"><%= message.message_time %></div>
+  </div>
+  <% end %>
 <% end %>
 
-<%= form_for [@conversation, @message] do |f| %>
-  <%= f.text_area :body, class: "form-control" %>
-  <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <%= f.submit "メッセージを送る", class: 'btn btn-default btn-block' %>
-<% end %>
 </div>

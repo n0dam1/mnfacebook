@@ -1,9 +1,12 @@
 <div class="container">
+  <h3>つながり</h3>
   <div class="row">
-    <h3><strong><%= @user.name %></strong></h3>
+    <div class="wrapper">
+    <h4><strong><%= @user.name %></strong></h4>
     <p><%= profile_img(@user) %></p>
     <p><%= @user.email %></p>
   </div>
     <%= render 'follower' %>
     <%= render 'followed' %>
+  </div>
 </div>

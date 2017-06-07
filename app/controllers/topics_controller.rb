@@ -3,7 +3,8 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:edit, :update, :destroy, :show]
 
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order(created_at: :DESC)
+    @topic = Topic.new
   end
 
   def create
