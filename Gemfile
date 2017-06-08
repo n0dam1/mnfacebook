@@ -42,6 +42,8 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'faker'
+
+gem 'fog'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
