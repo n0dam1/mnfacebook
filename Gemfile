@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 gem 'twitter-bootstrap-rails'
 gem 'data-confirm-modal'
@@ -44,8 +44,8 @@ gem 'rmagick'
 gem 'faker'
 
 gem 'fog'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,7 +60,11 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
 
-  gem 'dotenv-rails'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
