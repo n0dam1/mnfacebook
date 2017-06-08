@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_twitter_oauth(auth, signed_in_resourse=nil)
-    user = User.find_by(email: auth.info.email)
+    user = User.find_by(provider: auth.provider, uid: auth.uid)
 
     unless user
       user = User.new(
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
       password:  Devise.friendly_token[0..20]
       )
       user.skip_confirmation!
-      user.save(validate: false)
+      user.save
     end
     user
   end
