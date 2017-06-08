@@ -24,7 +24,7 @@ set :rbenv_ruby, '2.3.0'
 set :rbenv_type, :system
 
 #出力するログのレベル。
-set :log_level, :system
+set :log_level, :debug
 
 namespace :deploy do
   desc 'Restart application'
