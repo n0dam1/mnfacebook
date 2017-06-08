@@ -77,7 +77,25 @@ li {
 }
 
 .topic-content {
+  clear: both;
+}
+
+.topic-created_at {
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
   margin-bottom: 5px;
+}
+
+.topic-user-name {
+  float: left;
+  margin: 5px;
+}
+
+.topic-img {
+  float: left;
+}
+
+.row-wrapper {
+  width: 80%;
+  margin: 0 auto;
 }
